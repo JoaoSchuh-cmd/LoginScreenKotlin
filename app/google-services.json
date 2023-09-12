@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "603581712225",
+    "project_id": "loginscreenkotlin-ebfeb",
+    "storage_bucket": "loginscreenkotlin-ebfeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603581712225:android:7701fea6b379d755b26720",
+        "android_client_info": {
+          "package_name": "com.pucpr.pos.loginscreenkotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeiWgPFDDYRJg0GYbjS8ueXbsn3a2iaiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
