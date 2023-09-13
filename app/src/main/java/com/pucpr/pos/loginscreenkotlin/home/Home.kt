@@ -1,6 +1,7 @@
 package com.pucpr.pos.loginscreenkotlin.home
 
 import android.net.Uri
+import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.pucpr.pos.loginscreenkotlin.repository.StorageRepository
 import com.pucpr.pos.loginscreenkotlin.ui.theme.LoginScreenKotlinTheme
 
 @Composable
@@ -33,7 +35,18 @@ fun Home(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { galleryLauncher.launch("image/*") },
+            onClick = {
+                galleryLauncher.launch("image/*")
+                Log.d("ImagePath", selectedImageUri?.lastPathSegment.toString())
+                selectedImageUri?.let {
+                    val imageName = it.lastPathSegment ?: ""
+                    StorageRepository.addImage(
+                        imagePath = "images",
+                        imageName = imageName,
+                        it
+                    )
+                }
+            },
             modifier = Modifier
                 .height(120.dp)
                 .width(120.dp)
