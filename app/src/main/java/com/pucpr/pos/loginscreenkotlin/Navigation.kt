@@ -27,7 +27,7 @@ fun Navigation(
 ) {
     NavHost(
         navController = navController,
-        startDestination = LoginRoutes.Signup.name
+        startDestination = LoginRoutes.Signin.name
     ){
         composable(route = LoginRoutes.Signin.name) {
             LoginScreen(onNavToHomePage = {
